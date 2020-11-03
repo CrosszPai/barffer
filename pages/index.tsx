@@ -1,14 +1,9 @@
-import NavBottom from "../components/nav-bottom";
 import SearchBox from "../components/search-box";
-import Head from 'next/head'
 import Box from "../components/box";
 
 export default function IndexPage() {
   return (
     <>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </Head>
       <SearchBox />
       <div className="mt-8 mx-4">
         <img className="w-full h-auto" src="/assets/img/branding.png" />
