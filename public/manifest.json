@@ -2,7 +2,7 @@
     "name": "Barffer Food",
     "short_name": "Barffer",
     "theme_color": "#ffffff",
-    "background_color": "#004740",
+    "background_color": "#242529",
     "display": "fullscreen",
     "orientation": "portrait",
     "scope": "/",
