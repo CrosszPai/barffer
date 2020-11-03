@@ -1,0 +1,15 @@
+.box {
+  background: #c4c4c4;
+  height: 231px;
+  width: 214px;
+  background-size: 100% 100%;
+  @apply flex-grow-0 flex-shrink-0 mx-2 rounded-md relative bg-no-repeat flex flex-col;
+}
+
+.fav {
+  @apply absolute rounded-full 
+  bg-white right-0 
+  transform translate-y-2 
+  -translate-x-2 p-2 
+  text-barffer-text;
+}

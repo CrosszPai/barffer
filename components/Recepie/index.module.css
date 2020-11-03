@@ -1,0 +1,21 @@
+.filter-container {
+  @apply flex text-sm;
+}
+.filter-container > div {
+  @apply flex items-center justify-center text-xs p-2;
+}
+
+.filter-container > button {
+  @apply flex items-center justify-center text-xs p-2 m-2 shadow-xl rounded-md;
+}
+
+.active {
+  @apply bg-black text-white;
+}
+
+.fav-btn {
+  @apply absolute p-1 transform transition-transform translate-x-6 rounded-full shadow-md top-0 right-0;
+}
+.fav-btn:focus {
+  @apply outline-none;
+}
