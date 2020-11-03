@@ -7,7 +7,7 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/assets/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <SearchBox />
       <div className="mt-8 mx-4">
