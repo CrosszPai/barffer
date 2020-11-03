@@ -1,0 +1,23 @@
+.search-container {
+  @apply w-screen pt-3 px-4 flex items-center;
+}
+
+.search-container label {
+  @apply flex-auto;
+}
+.search-container input {
+  @apply text-lg w-full px-2 py-1 rounded-md bg-white text-black border font-light;
+}
+
+.search-container input:focus {
+  @apply outline-none;
+}
+
+.search-container button {
+  background: #262f56;
+  @apply rounded-md;
+}
+
+.search-container button:focus {
+  @apply outline-none;
+}
