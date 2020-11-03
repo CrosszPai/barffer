@@ -9,7 +9,12 @@ module.exports = {
       colors: {
         barffer: {
           bg: "#F8F5F2",
+          text: "#3E4462",
+          "link-active": "#EDA345",
         },
+      },
+      fontFamily: {
+        popins: ["Poppins", "sans-serif"],
       },
     },
   },
