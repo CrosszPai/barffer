@@ -32,7 +32,8 @@ function MyApp({ Component, pageProps }) {
       <link href="/splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
       <link href="/splashscreens/iphonexsmax_splash.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-      <link href="/splashscreens/iphonex_splash.png" media="(device-width: 390) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+      <link href="/splashscreens/iphonex_splash.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+      <link href="/splashscreens/iphoneplus_splash.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
     </Head>
     <div className=" w-screen bg-barffer-bg overflow-auto" style={{
       height: 'calc(100vh - 3.5rem)'
