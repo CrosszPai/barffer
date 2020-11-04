@@ -57,7 +57,7 @@ const Calculate = ({ onCalculate, onMealChange }) => {
             className={
               mode === 1
                 ? "p-2 flex-1 bg-black text-white rounded-lg"
-                : "p-2 flex-1 bg-white border text-black rounded-lg border-black"
+                : "p-2 flex-1 bg-white border text-barffer-text rounded-lg border-black"
             }
           >
             normal
@@ -69,7 +69,7 @@ const Calculate = ({ onCalculate, onMealChange }) => {
             className={
               mode === 2
                 ? "p-2 flex-1 bg-black text-white rounded-lg mx-4"
-                : "p-2 flex-1 bg-white border text-black rounded-lg mx-4 border-black"
+                : "p-2 flex-1 bg-white border text-barffer-text rounded-lg mx-4 border-black"
             }
           >
             +weight
@@ -81,7 +81,7 @@ const Calculate = ({ onCalculate, onMealChange }) => {
             className={
               mode === 3
                 ? "p-2 flex-1 bg-black text-white rounded-lg"
-                : "p-2 flex-1 bg-white border text-black rounded-lg border-black"
+                : "p-2 flex-1 bg-white border text-barffer-text rounded-lg border-black"
             }
           >
             -weight
