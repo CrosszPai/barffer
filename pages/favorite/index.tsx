@@ -1,10 +1,10 @@
-import React from "react";
-import SearchBox from "../components/search-box";
-import Box from "../components/box";
 import { motion } from "framer-motion";
+import FavCard from "../../components/Favorite/fav-card";
+import FilterController from "../../components/Recepie/filter-controller";
 import { useRecoilState } from "recoil";
-import { favListState } from "../state/fav.atom";
-interface HomePageProps {
+import { favListState } from "../../state/fav.atom";
+
+interface FavPageProps {
   recepies: Array<{
     header: string;
     body: string;
@@ -12,48 +12,45 @@ interface HomePageProps {
   }>;
 }
 
-export default function HomePage({ recepies }: HomePageProps): JSX.Element {
+const FavoritePage = ({ recepies }: FavPageProps) => {
   const [favs, setFavs] = useRecoilState(favListState);
   return (
-    <motion.div
-      style={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-    >
-      <SearchBox />
-      <div className="mt-8 mx-4">
-        <img className="w-full h-auto" src="/assets/img/branding.png" />
-      </div>
-      <div className="mt-8 mx-4 flex items-center text-barffer-text">
-        <div className="font-popins text-2xl font-mediu">Today’s recepie</div>
-        <h6 className="ml-auto text-xs">See all</h6>
-      </div>
-      <div>
-        <div className="mt-8 mx-4 flex overflow-auto">
-          {recepies.map((r) => (
-            <Box
-              onFav={() =>
-                setFavs((fav) => {
-                  if (fav.has(r.header)) {
-                    fav.delete(r.header);
-                  } else [fav.add(r.header)];
-                  console.log(fav);
-
-                  return new Set(fav);
-                })
-              }
-              key={r.header}
-              isFav={favs?.has(r.header)}
-              {...r}
+    <>
+      {" "}
+      <motion.div
+        style={{ opacity: 0 }}
+        className="bg-white p-4 text-2xl fixed z-50 w-screen"
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
+      >
+        <h1 className="text-2xl text-center font-medium">Favorite Recepies</h1>
+        <FilterController />
+      </motion.div>
+      <div className="mt-40 px-4 mb-20">
+        {Array.from(favs).map((header) => {
+          const target = recepies.find((m) => header === m.header);
+          return (
+            <FavCard
+              key={header}
+              onDelete={() => {
+                setFavs((olds) => {
+                  olds.delete(target.header);
+                  return new Set(olds);
+                });
+              }}
+              body={target.body}
+              header={target.header}
+              src={target.src}
             />
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </motion.div>
+    </>
   );
-}
+};
 
-export async function getServerSideProps(): Promise<{ props: HomePageProps }> {
+export default FavoritePage;
+export async function getServerSideProps(): Promise<{ props: FavPageProps }> {
   return {
     props: {
       recepies: [

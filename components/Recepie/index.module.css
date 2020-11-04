@@ -14,7 +14,7 @@
 }
 
 .fav-btn {
-  @apply absolute p-1 transform transition-transform translate-x-6 rounded-full shadow-md top-0 right-0;
+  @apply absolute p-1 rounded-full shadow-md top-0 right-0;
 }
 .fav-btn:focus {
   @apply outline-none;
