@@ -7,8 +7,8 @@ const RecepieContent = () => {
   return (
     <>
       <div className="w-screen px-4 mb-20" style={{ marginTop: "8.875rem" }}>
-        {[0, 0].map((v) => {
-          return <Card />;
+        {[0, 1].map((v) => {
+          return <Card key={v} />;
         })}
       </div>
     </>

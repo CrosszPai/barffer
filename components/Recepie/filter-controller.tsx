@@ -16,7 +16,7 @@ const FilterController = () => {
         className={current === "dog" ? styles["active"] : undefined}
         onClick={() => setCurrent("dog")}
       >
-        <FaDog className="mr-2" />
+        <FaDog color={current === "dog" && "white"} className="mr-2" />
         Dog
       </motion.button>
       <motion.button
@@ -24,7 +24,7 @@ const FilterController = () => {
         className={current === "cat" ? styles["active"] : undefined}
         onClick={() => setCurrent("cat")}
       >
-        <FaCat className="mr-2" />
+        <FaCat color={current === "cat" && "white"} className="mr-2" />
         Cat
       </motion.button>
       <motion.button
@@ -32,7 +32,7 @@ const FilterController = () => {
         className={current === "all" ? styles["active"] : undefined}
         onClick={() => setCurrent("all")}
       >
-        <FaCheckDouble className="mr-2" />
+        <FaCheckDouble color={current === "all" && "white"} className="mr-2" />
         Alls
       </motion.button>
     </div>
