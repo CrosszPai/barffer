@@ -1,5 +1,5 @@
 .nav-container {
-    @apply fixed flex bottom-0 w-full py-4 px-8 bg-white justify-between text-barffer-text;
+    @apply fixed flex bottom-0 w-full py-4 px-8 pb-6 bg-white justify-between text-barffer-text;
 }
 .link-active{
     @apply text-barffer-link-active;

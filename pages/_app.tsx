@@ -3,11 +3,12 @@ import NavBottom from "../components/nav-bottom";
 import Head from "next/head";
 import "../styles/index.css";
 import { useRouter } from "next/router";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }) {
-  const Router = useRouter()
+  const Router = useRouter();
   return (
-    <>
+    <RecoilRoot>
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -99,13 +100,11 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <div
-        className=" w-screen h-screen bg-barffer-bg overflow-auto"
-      >
+      <div className=" w-screen h-screen bg-barffer-bg overflow-auto">
         <Component {...pageProps} />
       </div>
-      {!Router.pathname.includes('[id]') && <NavBottom />}
-    </>
+      {!Router.pathname.includes("[id]") && <NavBottom />}
+    </RecoilRoot>
   );
 }
 
