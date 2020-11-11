@@ -4,6 +4,7 @@ import Box from "../components/box";
 import { motion } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { favListState } from "../state/fav.atom";
+import { useRouter } from "next/router";
 interface HomePageProps {
   recepies: Array<{
     header: string;
@@ -14,6 +15,7 @@ interface HomePageProps {
 
 export default function HomePage({ recepies }: HomePageProps): JSX.Element {
   const [favs, setFavs] = useRecoilState(favListState);
+  const Router = useRouter()
   return (
     <motion.div
       style={{ opacity: 0 }}
@@ -32,11 +34,15 @@ export default function HomePage({ recepies }: HomePageProps): JSX.Element {
         <div className="mt-8 mx-4 flex overflow-auto">
           {recepies.map((r) => (
             <Box
+              onClick={() => {
+                sessionStorage.setItem('data', JSON.stringify(r));
+                Router.push(`/recepie/${Math.floor(Math.random() * 10)}`);
+              }}
               onFav={() =>
                 setFavs((fav) => {
                   if (fav.has(r.header)) {
                     fav.delete(r.header);
-                  } else [fav.add(r.header)];
+                  } else[fav.add(r.header)];
                   console.log(fav);
 
                   return new Set(fav);
