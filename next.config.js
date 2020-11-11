@@ -6,7 +6,13 @@ module.exports = withPWA({
     dest: "public",
     runtimeCaching,
   },
-  images: {
-    domains: ["s3-alpha-sig.figma.com"],
-  },
+images: {
+  domains: ["s3-alpha-sig.figma.com"],
+},
 });
+
+// module.exports = {
+//   images: {
+//     domains: ["s3-alpha-sig.figma.com"],
+//   },
+// }

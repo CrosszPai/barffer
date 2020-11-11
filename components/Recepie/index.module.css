@@ -16,6 +16,6 @@
 .fav-btn {
   @apply absolute p-1 rounded-full shadow-md top-0 right-0;
 }
-.fav-btn:focus {
+.fav-btn:focus,.fav-btn:active {
   @apply outline-none;
 }
