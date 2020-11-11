@@ -9,9 +9,10 @@ interface BoxProps {
   body: string;
   onFav: () => void;
   isFav: boolean;
+  onClick: () => void
 }
 
-const Box = ({ src, body, header, onFav, isFav }: BoxProps) => {
+const Box = ({ src, body, header, onFav, isFav, onClick }: BoxProps) => {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}
@@ -29,6 +30,7 @@ const Box = ({ src, body, header, onFav, isFav }: BoxProps) => {
         <p className="text-xs font-light">{body}</p>
         <div className="h-6"></div>
         <div
+          onClick={onClick}
           className="absolute bottom-0 right-0 p-1 transform -translate-x-1 -translate-y-1 rounded"
           style={{
             background: "#EDA345",
